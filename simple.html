@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Simple Level</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="background">
+    <header class="simple-header">
+      <a href="home.html"><button class="back-button family-font">Atrás</button></a>
+      <section>
+        <div class="top-info">
+          <img src="assests/images/logo.svg" alt="" class="logo-image">
+          <div class="score-block">
+            <p class="text-s family-font">SCORE</p>
+            <h3 id="score-number" class=" family-font">12</h3>
+          </div>
+        </div>
+      </section>
+    </header>
+    <main>
+      <section class="start-simple-game" id="circles">
+        <div class="circle blue" >
+          <img src="assests/images/icon-paper.svg" alt="" data-icon="paper">
+        </div>
+        <div class="circle yellow" data-icon="scissors">
+          <img src="assests/images/icon-scissors.svg" alt="">
+        </div>
+        <div class="circle red" data-icon="rock">
+          <img src="assests/images/icon-rock.svg" alt="">
+        </div>
+      </section>
+    </main>
+    <script src="./js/scripts.js"></script>
+  </body>
+</html>
