@@ -10,6 +10,10 @@
   --yellow-circle-shadow: #C76C1B;
   --blue-circle: #4664F4;
   --blue-circle-shadow: #2A45C2;
+  --spock-circle: #3FB7CD;
+  --spock-circle-shadow: #2D8DAB;
+  --lizard-circle: #834EE3;
+  --lizard-circle-shadow: #5F37A8;
 }
 
 
@@ -40,7 +44,10 @@ body {
   font-style: normal;
   text-align: center;
   padding-top: 1rem;
+  padding-bottom: 1.2rem;
 }
+
+/* TEXTOS */
 h1{
   color: white;
   letter-spacing: 0.125rem;
@@ -54,6 +61,7 @@ h2{
   font-size: 3.5rem;
   font-weight: var(--bold);
   color: white;
+  margin: 0;
 }
 h3{
   font-size: 2.5rem;
@@ -61,7 +69,26 @@ h3{
   color: #565468;
   line-height: 2.5rem;
 }
+.text-m{
+  font-size: 0.9375rem;
+  font-weight: var(--semibold);
+  color: white;
+  letter-spacing: 0.1175rem;
+  margin: 0;
+}
+.text-s{
+  font-size: 0.625rem;
+  font-weight: var(--semibold);
+  color: #2A45C2;
+  letter-spacing: 0.0975rem;
+  margin: 0;
+}
+/* FIN TEXTOS */
+
+
+/* HEADER */
 .back-button{
+  font-family: "Barlow Semi Condensed", sans-serif;
   border: none;
   background-color: transparent;
   color: #565468;
@@ -72,25 +99,15 @@ h3{
   min-height: 100vh;
   /* cambiar al final */
 }
-
-.text-m{
-  font-size: 0.9375rem;
-  font-weight: var(--semibold);
-  color: white;
-  letter-spacing: 0.1175rem;
-}
-.text-s{
-  font-size: 0.625rem;
-  font-weight: var(--semibold);
-  color: #2A45C2;
-  letter-spacing: 0.0975rem;
-}
-
-
 .home-header{
   margin-top: 1rem;
   margin-bottom: 1.875rem;
 }
+
+/* FIN HEADER */
+
+
+/* HOME ELECCIÓN JUEGO */
 .games{
   display: flex;
   flex-direction: column;
@@ -108,6 +125,7 @@ h3{
   height: auto;
 }
 .button{
+  font-family: "Barlow Semi Condensed", sans-serif;
   background-image: var(--block-color);
   width: 13.75rem;
   height: 3rem;
@@ -116,6 +134,7 @@ h3{
   font-size: var(--button-text-size);
   letter-spacing: 0.1563rem;
   border: none;
+  
 }
 .button:hover{
   color: #DB2E4D;
@@ -139,7 +158,7 @@ h3{
   align-items: center;
 }
 .logo-image{
-  height: 3rem;
+  height: 4rem;
 }
 .score-block{
   width: 5rem;
@@ -150,6 +169,9 @@ h3{
   flex-direction: column;
   justify-content: center;
 }
+.score-number{
+  margin:0;
+}
 .start-simple-game{
   background-image: url(../assests/images/bg-triangle.svg);
   width: 19.5rem;
@@ -159,7 +181,17 @@ h3{
   background-repeat: no-repeat;
   background-position: center;
 }
+.start-advanced-game{
+  background-image: url(../assests/images/bg-pentagon.svg);
+  width: 19.5rem;
+  height: 17.625rem;
+  margin-inline: auto;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .circle{
+  position: absolute;
   width: 6.2069rem;
   height: 6.2069rem;
   border-radius: 100%;
@@ -170,19 +202,79 @@ h3{
   align-items: center;
 }
 .blue{
+  position: relative;
   border: 0.9375rem solid var(--blue-circle);
   box-shadow: 0 0.4375rem 0 0 var(--blue-circle-shadow);
+  top: -10px;
 }
-
 .red{
+  position: relative;
+  top: -20px;
+  left: 105px;
   border: 0.9375rem solid var(--red-circle);
   box-shadow: 0 0.4375rem 0 0 var(--red-circle-shadow);
 }
 .yellow{
+  position: relative;
+  bottom: 110px;
+  left: 200px;
   border: 0.9375rem solid var(--yellow-circle);
   box-shadow: 0 0.4375rem 0 0 var(--yellow-circle-shadow);
+}
+.green{
+  position: relative;
+  top: -350px;
+  border: 0.9375rem solid var(--spock-circle);
+  box-shadow: 0 0.4375rem 0 0 var(--spock-circle-shadow);
+}
+.purple{
+  position: relative;
+  bottom: 110px;
+  left: 30px;
+  border: 0.9375rem solid var(--lizard-circle);
+  box-shadow: 0 0.4375rem 0 0 var(--lizard-circle-shadow);
 }
 .icon-image{
   pointer-events: none;
   width: 60%;
+}
+.footer-status{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.rules-button{
+  background-color: transparent;
+  border: 0.0625rem solid white;
+  border-radius: var(--border-radius);
+  width: 8rem;
+  height: 2.5rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: var(--button-text-size);
+  letter-spacing: 0.1031rem;
+  color: white;
+}
+.body-game{
+  margin-bottom: 5rem;
+}
+.hide{
+  display: none;
+}
+.during-simple-game{
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+.option-game-picked{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.options-game{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }

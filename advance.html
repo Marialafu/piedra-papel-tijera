@@ -10,7 +10,63 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body class="background">
-    <main></main>
+    <header class="simple-header">
+      <a href="index.html"><button class="back-button">Atrás</button></a>
+      <section>
+        <div class="top-info">
+          <img src="assests/images/logo-bonus.svg" alt="" class="logo-image">
+          <div class="score-block">
+            <p class="text-s">SCORE</p>
+            <h3 id="score-number" class="score-number">0</h3>
+          </div>
+        </div>
+      </section>
+    </header>
+    <main class="body-game">
+      <!-- COMIENZO DEL JUEGO -->
+      <section class="start-advanced-game" id="start-simple-game">
+        <div class="circle blue" data-icon="paper">
+          <img src="assests/images/icon-paper.svg" alt="" class="icon-image">
+        </div>
+        <div class="circle yellow" data-icon="scissors">
+          <img src="assests/images/icon-scissors.svg" alt="" class="icon-image">
+        </div>
+        <div class="circle red" data-icon="rock">
+          <img src="assests/images/icon-rock.svg" alt="" class="icon-image">
+        </div>
+        <div class="circle purple" data-icon="lizard">
+          <img src="assests/images/icon-lizard.svg" alt="" class="icon-image">
+        </div>
+        <div class="circle green" data-icon="spock">
+          <img src="assests/images/icon-spock.svg" alt="" class="icon-image">
+        </div>
+      </section>
+      <!-- ELECCION -->
+      <section class="during-simple-game">
+        <!-- AUNQUE PONGO HIDE NO SE ESCONDE -->
+        <section class="options-game hide" id="during-simple-game">
+          <div class="option-game-picked">
+            <div class="circle red" id="you-picked">
+              <img src="assests/images/icon-paper.svg" alt="">
+            </div> 
+            <span class="text-m">YOU PICKED</span>
+          </div>
+          <div class="option-game-picked">
+            <div class="circle blue">
+              <img src="assests/images/icon-rock.svg" alt="">
+            </div> 
+            <span class="text-m">THE HOUSE PICKED</span>
+          </div>
+        </section>
+        <!-- STATUS Y BOTON -->
+        <section class="footer-status hide">
+          <h2 id="game-result-message">STATUS</h2>
+          <button id="play-again-button" class="button">PLAY AGAIN</button>
+        </section>
+      </section>
+    </main>
+    <footer class="general-footer">
+      <button class="rules-button">RULES</button></footer>
     <script src="./js/scripts.js"></script>
   </body>
 </html>
