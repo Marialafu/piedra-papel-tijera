@@ -1,15 +1,8 @@
-//si la tipografía la pongo al body no me lo cogen los botones, ¿se pone entonces la tipografía en el button también?
+//en simple falta que se asignen bien los colores.
+//falta todo el responsive.
 
-//contadores mejor e un span, no son titulos.
-
-//como se organizaría el css para que esté más optimizado. El botón de rules tiene todo pero podría coger cosas de otro.
-
-//Para el background tuve que poner altura y anchura y lo puse con vh y wh. Pero si no ponía uno de los dos me hacía scroll hasta que tuviera contenido, no? Se quedó raro y ahora si lo quito funciona.
-
-//¿Por qué no me funciona el font family en los buttons. Al principio si pero se ha quitado solo.
-
-const startSimpleGameElement = document.getElementById('start-simple-game');
-const duringSimpleGameElement = document.getElementById('during-simple-game');
+const startGameElement = document.getElementById('start-game');
+const duringGameElement = document.getElementById('during-game');
 const playAgainButtonElement = document.getElementById('play-again-button');
 
 const youPickedElement = document.getElementById('you-picked');
@@ -22,7 +15,7 @@ const gameResultMessageElement = document.getElementById('game-result-message');
 const scoreYouResultElement = document.getElementById('score-you');
 const scorePCResultElement = document.getElementById('score-pc');
 
-const houseOptions = ['scissors', 'paper', 'rock', 'lizard', 'spock'];
+const houseOptions = ['scissors', 'paper', 'rock'];
 
 let userPickedOption;
 let housePickedOption;
@@ -71,6 +64,8 @@ const imagesOptions = {
   spock: './assests/images/icon-spock.svg'
 };
 
+
+
 const comparePickedOptions = event => {
   if (userPickedOption === housePickedOption) {
     gameResultMessageElement.textContent = 'NO SCORE';
@@ -83,28 +78,45 @@ const comparePickedOptions = event => {
   }
   scoreYouResultElement.textContent = scoreYouResult;
   scorePCResultElement.textContent = scorePcResult;
-  duringSimpleGameElement.classList.remove('hide');
+  duringGameElement.classList.remove('hide');
 };
 
 const saveHousePickedOption = () => {
-  const randomIndex = Math.floor(Math.random() * houseOptions.length);
+  //se pondría así? multiplicado por 3 para que solo coja los 3 primeros valores
+  const randomIndex = Math.floor(Math.random() * 3);
   housePickedOption = houseOptions[randomIndex];
-  imageGamePickedElement.src = imagesOptions[housePickedOption];
 
+  imageGamePickedElement.src = imagesOptions[housePickedOption];
+  userPickedElement.classList.add(housePickedOption)
   comparePickedOptions();
 };
 
+
 const saveUserPickedOption = event => {
   userPickedOption = event.target.dataset.icon;
-  startSimpleGameElement.classList.add('hide');
+  startGameElement.classList.add('hide');
   imageYouPickedElement.src = imagesOptions[event.target.dataset.icon];
+  youPickedElement.classList.add(event.target.dataset.icon)
   saveHousePickedOption();
 };
 
-const reestartGame = () => {
-  duringSimpleGameElement.classList.add('hide');
-  startSimpleGameElement.classList.remove('hide');
+const reestartGame = (event) => {
+  duringGameElement.classList.add('hide');
+  startGameElement.classList.remove('hide');
+  
 };
 
-startSimpleGameElement.addEventListener('click', saveUserPickedOption);
+console.log(href="advance.html");
+
+const startGame = () => {
+  if (href="advance.html"){
+    houseOptions.push('lizard', 'spock')
+    
+} 
+}
+startGame()
+
+
+
+startGameElement.addEventListener('click', saveUserPickedOption);
 playAgainButtonElement.addEventListener('click', reestartGame);
