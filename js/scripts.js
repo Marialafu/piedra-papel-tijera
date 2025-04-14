@@ -64,8 +64,6 @@ const imagesOptions = {
   spock: './assests/images/icon-spock.svg'
 };
 
-
-
 const comparePickedOptions = event => {
   if (userPickedOption === housePickedOption) {
     gameResultMessageElement.textContent = 'NO SCORE';
@@ -87,36 +85,33 @@ const saveHousePickedOption = () => {
   housePickedOption = houseOptions[randomIndex];
 
   imageGamePickedElement.src = imagesOptions[housePickedOption];
-  userPickedElement.classList.add(housePickedOption)
+  userPickedElement.classList.add(housePickedOption);
   comparePickedOptions();
 };
 
-
 const saveUserPickedOption = event => {
   userPickedOption = event.target.dataset.icon;
+  if (!userPickedOption) return;
+
   startGameElement.classList.add('hide');
   imageYouPickedElement.src = imagesOptions[event.target.dataset.icon];
-  youPickedElement.classList.add(event.target.dataset.icon)
+  youPickedElement.classList.add(event.target.dataset.icon);
   saveHousePickedOption();
 };
 
-const reestartGame = (event) => {
+const reestartGame = event => {
   duringGameElement.classList.add('hide');
   startGameElement.classList.remove('hide');
-  
 };
 
-console.log(href="advance.html");
+console.log((href = 'advance.html'));
 
 const startGame = () => {
-  if (href="advance.html"){
-    houseOptions.push('lizard', 'spock')
-    
-} 
-}
-startGame()
-
-
+  if ((href = 'advance.html')) {
+    houseOptions.push('lizard', 'spock');
+  }
+};
+startGame();
 
 startGameElement.addEventListener('click', saveUserPickedOption);
 playAgainButtonElement.addEventListener('click', reestartGame);
